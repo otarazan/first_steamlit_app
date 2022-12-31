@@ -1,7 +1,9 @@
-import streamlit as streamlit
+import streamlit
 import pandas
-import numpy as np
+import requests
 import snowflake.connector
+from urllib.error import URLError
+import numpy as np
 
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
@@ -17,7 +19,6 @@ streamlit.write('The user entered ', fruit_choice)
 
 add_my_fruit = streamlit.text_input('What fruit would you like to add?','Jackfruit') streamlit.write('The user entered ', add_my_fruit)
 
-import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+fruit_choice)
 
 # write your own comment -what does the next line do? 
