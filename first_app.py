@@ -1,6 +1,7 @@
 import streamlit as streamlit
 import pandas
 import numpy as np
+import snowflake.connector
 
 streamlit.header("Fruityvice Fruit Advice!")
 fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
